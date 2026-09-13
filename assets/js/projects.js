@@ -4,13 +4,16 @@ async function loadProjects() {
 
   try {
     const res = await fetch('assets/data/projects.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
     const projects = await res.json();
     const visible = projects.filter((p) => !p.hidden);
 
     grid.innerHTML = visible.map(renderCard).join('');
 
-    const statEl = document.getElementById('statProjects');
-    if (statEl) statEl.textContent = visible.length;
+    window.dispatchEvent(new CustomEvent('projects:loaded', {
+      detail: { count: visible.length },
+    }));
   } catch (err) {
     console.error('Failed to load projects:', err);
   }
@@ -38,7 +41,7 @@ function renderLinks(links = []) {
   return links
     .map((link) => {
       if (link.type === 'current') {
-        return `<span class="portfolio-card__link portfolio-card__link--secondary" style="cursor:default;opacity:0.7;">${link.label}</span>`;
+        return `<span class="portfolio-card__link portfolio-card__link--secondary">${link.label}</span>`;
       }
       const modifier = link.type === 'demo' ? ' portfolio-card__link--demo' : '';
       return `<a href="${link.url}" class="portfolio-card__link${modifier}" target="_blank" rel="noopener">${link.label} <span class="portfolio-card__link-arrow">→</span></a>`;
