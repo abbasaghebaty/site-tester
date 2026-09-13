@@ -49,16 +49,15 @@
             border: 2px solid rgba(255, 255, 255, 0.15);
             animation: ringPulse 3s ease-in-out infinite;
             pointer-events: none;
+            transform: none;
         }
 
         @keyframes ringPulse {
             0%,
             100% {
-                transform: scale(1);
                 opacity: 0.6;
             }
             50% {
-                transform: scale(1.06);
                 opacity: 1;
             }
         }
