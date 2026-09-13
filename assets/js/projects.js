@@ -1,6 +1,6 @@
 async function loadProjects() {
-    const tableBody = document.getElementById('portfolioGrid');
-    if (!tableBody) return;
+    const container = document.getElementById('portfolioGrid');
+    if (!container) return;
 
     try {
         const res = await fetch('assets/data/projects.json');
@@ -9,7 +9,18 @@ async function loadProjects() {
         const projects = await res.json();
         const visible = projects.filter((project) => !project.hidden);
 
-        tableBody.innerHTML = visible.map(renderProjectRow).join('');
+        container.innerHTML = `
+            <table class="projects-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Project</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${visible.map(renderProjectRow).join('')}
+                </tbody>
+            </table>`;
 
         window.dispatchEvent(new CustomEvent('projects:loaded', {
             detail: { count: visible.length },
@@ -27,19 +38,13 @@ function renderTech(tech = []) {
 }
 
 function renderProjectName(project) {
-    const currentLink = project.links?.find((link) => link.type === 'current');
     const externalLink = project.links?.find((link) => link.type !== 'current' && link.url);
-    const link = externalLink || currentLink;
 
-    if (!link) {
+    if (!externalLink) {
         return `<span class="projects-table__current">${project.title}</span>`;
     }
 
-    if (link.type === 'current') {
-        return `<span class="projects-table__current">${project.title}</span>`;
-    }
-
-    return `<a href="${link.url}" target="_blank" rel="noopener noreferrer">
+    return `<a href="${externalLink.url}" target="_blank" rel="noopener noreferrer">
         ${project.title} <span class="projects-table__arrow">→</span>
     </a>`;
 }
