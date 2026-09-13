@@ -1,70 +1,41 @@
-// Fetches a real visitor count from CountAPI, falling back to a
-// natural-looking local simulation when the service is unreachable.
-export function initVisitorCounter({ statValues, tryAnimateStat, statVisitorsEl }) {
-        // ========================================
-        // Visitor Counter — real count via CountAPI, with a natural
-        // (non-random-looking) local fallback when the service is
-        // unreachable: growth is irregular, time-based, and capped so it
-        // never jumps unrealistically.
-        // ========================================
-        const VISITOR_NAMESPACE = 'abbas-aghebaty-portfolio';
-        const VISITOR_KEY = 'visitors';
-        const VISITOR_API_URL = `https://api.countapi.xyz/hit/${VISITOR_NAMESPACE}/${VISITOR_KEY}`;
-        const VISITOR_FALLBACK_KEY = 'visitor_fallback_v2';
+const D8A_PROPERTY_ID = '2c8daccc-5b23-4555-a117-473a0405398e';
+const D8A_TRACKING_URL = `https://global.t.d8a.tech/${D8A_PROPERTY_ID}/d/c`;
 
-        function naturalVisitorFallback() {
-            let data = null;
-            try {
-                data = JSON.parse(localStorage.getItem(VISITOR_FALLBACK_KEY) || 'null');
-            } catch (_) {
-                data = null;
-            }
-            const nowTs = Date.now();
-            if (!data || typeof data.count !== 'number' || typeof data.lastUpdate !== 'number') {
-                data = { count: 130 + Math.floor(Math.random() * 90), lastUpdate: nowTs };
-            }
+/**
+ * Initializes real visitor tracking through d8a.
+ *
+ * The old implementation fabricated a number with localStorage when CountAPI
+ * was unavailable. That fallback is intentionally gone: visitor data must
+ * come from the shared analytics backend, never from one browser.
+ */
+export function initVisitorCounter({ statValues, tryAnimateStat }) {
+    if (!statValues || typeof tryAnimateStat !== 'function') return;
 
-            // Simulate irregular, capped growth for the time elapsed since last visit.
-            const elapsedHours = Math.min((nowTs - data.lastUpdate) / 3600000, 96);
-            const wholeHours = Math.floor(elapsedHours);
-            let added = 0;
-            for (let i = 0; i < wholeHours; i++) {
-                const roll = Math.random();
-                if (roll > 0.82) added += 3;
-                else if (roll > 0.6) added += 2;
-                else if (roll > 0.35) added += 1;
-                // else: no growth that hour
-            }
-            // This visit itself has a good chance of counting.
-            if (Math.random() > 0.5) added += 1;
+    const scriptId = 'd8a-web-tracker';
 
-            data.count += added;
-            data.lastUpdate = nowTs;
-            try {
-                localStorage.setItem(VISITOR_FALLBACK_KEY, JSON.stringify(data));
-            } catch (_) { /* storage unavailable — ignore */ }
-            return data.count;
-        }
+    if (!document.getElementById(scriptId)) {
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.async = true;
+        script.src = 'https://global.t.d8a.tech/js';
+        script.onload = () => {
+            if (!window.d8a) return;
 
-        async function fetchVisitorCount() {
-            try {
-                const response = await fetch(VISITOR_API_URL, { signal: AbortSignal.timeout(6000) });
-                if (!response.ok) throw new Error(`CountAPI: ${response.status}`);
-                const data = await response.json();
-                if (!data || typeof data.value !== 'number') throw new Error('Invalid CountAPI response');
-                statValues.visitors = data.value;
-                tryAnimateStat('visitors');
-                try {
-                    localStorage.setItem(VISITOR_FALLBACK_KEY, JSON.stringify({ count: data.value, lastUpdate: Date.now() }));
-                } catch (_) { /* ignore */ }
-            } catch (err) {
-                console.warn('Visitor counter (CountAPI) unavailable, using natural local fallback:', err.message);
-                statValues.visitors = naturalVisitorFallback();
-                tryAnimateStat('visitors');
-            }
-        }
+            window.d8a('js', new Date());
+            window.d8a('config', D8A_PROPERTY_ID, {
+                server_container_url: D8A_TRACKING_URL,
+            });
+        };
+        script.onerror = () => {
+            console.warn('d8a web tracker could not be loaded.');
+        };
 
-        // Start fetching visitor count (non-blocking)
-        fetchVisitorCount();
+        document.head.appendChild(script);
+    }
 
+    // d8a's /d/c endpoint is a collector, not a public total-counter API.
+    // Therefore do not fabricate a visible visitor number when no trusted
+    // public count endpoint is available.
+    statValues.visitors = 0;
+    tryAnimateStat('visitors');
 }
