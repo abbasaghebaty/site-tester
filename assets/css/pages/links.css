@@ -1,7 +1,8 @@
 .link-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--sp-4);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  justify-content: center;
 }
 
 .link-card {
@@ -10,9 +11,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  min-height: 132px;
-  padding: 15px;
+  gap: 10px;
+  min-height: 99px;
+  padding: 12px;
   text-align: center;
   transition: background var(--transition);
 }
@@ -45,12 +46,18 @@
 .link-card__body {
   min-width: 0;
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .link-card__name {
   font-weight: 400;
   font-size: var(--fs-sm);
   color: var(--text-primary);
+  text-align: center;
 }
 
 .link-card__desc {
@@ -60,11 +67,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center;
 }
 
 .link-card__arrow {
   position: absolute;
-  inset-inline-end: 15px;
+  inset-inline-end: 12px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-tertiary);
