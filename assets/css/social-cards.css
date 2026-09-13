@@ -15,7 +15,7 @@
             text-align: center;
             text-decoration: none;
             color: var(--text);
-            transition: all var(--transition-smooth);
+            transition: background-color var(--transition-smooth), border-color var(--transition-smooth);
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
@@ -26,9 +26,6 @@
             align-items: center;
             justify-content: center;
             gap: 0.6rem;
-            will-change: background, border-color;
-            transform-style: preserve-3d;
-            perspective: 600px;
         }
 
         .social-card::before {
@@ -81,11 +78,7 @@
         .social-card__icon svg {
             width: 32px;
             height: 32px;
-            transition: transform var(--transition-fast);
-        }
-
-        .social-card:hover .social-card__icon svg {
-            transform: scale(1.1);
+            display: block;
         }
 
         .social-card__name {
@@ -108,13 +101,11 @@
             z-index: 1;
             font-size: 0.8rem;
             color: var(--text-muted);
-            transition: all var(--transition-fast);
+            transition: color var(--transition-fast), opacity var(--transition-fast);
             opacity: 0;
-            transform: translateX(-8px);
         }
 
         .social-card:hover .social-card__arrow {
             opacity: 1;
-            transform: translateX(0);
             color: var(--blue);
         }
