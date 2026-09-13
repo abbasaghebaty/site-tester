@@ -201,107 +201,7 @@
 <!-- Portfolio Section -->
 <section class="section reveal" aria-label="Portfolio projects" id="portfolioSection">
     <h2 class="section__title">Featured Projects</h2>
-    <div class="projects-table-wrap reveal">
-        <table class="projects-table">
-            <thead>
-                <tr>
-                    <th scope="col">Project</th>
-                    <th scope="col">Description</th>
-                </tr>
-            </thead>
-            <tbody id="projectsTableBody">
-                <!-- Project 1: Increase Photo Resolution -->
-                <tr data-project>
-                    <td class="projects-table__name">
-                        <span class="projects-table__icon" aria-hidden="true">🖼️</span>
-                        <a href="https://abbasaghebaty.github.io/Increase-photo-resolotion/" target="_blank" rel="noopener">
-                            Increase Photo Resolution <span class="projects-table__arrow">→</span>
-                        </a>
-                    </td>
-                    <td>
-                        <p class="projects-table__desc">A lightweight web application that enhances image resolution with multiple upscale levels while maintaining a fast and responsive user experience.</p>
-                        <div class="projects-table__tech">
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge tech-badge--purple">Canvas API</span>
-                            <span class="tech-badge tech-badge--teal">Image Processing</span>
-                        </div>
-                    </td>
-                </tr>
-
-                <!-- Project 2: Caption Generator -->
-                <tr data-project>
-                    <td class="projects-table__name">
-                        <span class="projects-table__icon" aria-hidden="true">✍️</span>
-                        <a href="https://abbasaghebaty.github.io/Caption-Generator/" target="_blank" rel="noopener">
-                            Caption Generator <span class="projects-table__arrow">→</span>
-                        </a>
-                    </td>
-                    <td>
-                        <p class="projects-table__desc">An intelligent caption generation tool for Telegram shop owners with optimized formatting, emojis and category-based templates.</p>
-                        <div class="projects-table__tech">
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge tech-badge--purple">Telegram API</span>
-                            <span class="tech-badge tech-badge--teal">Automation</span>
-                        </div>
-                    </td>
-                </tr>
-
-                <!-- Project 3: YourClean Telegram Bot -->
-                <tr data-project>
-                    <td class="projects-table__name">
-                        <span class="projects-table__icon" aria-hidden="true">🤖</span>
-                        <a href="https://t.me/YourClean_bot" target="_blank" rel="noopener">
-                            YourClean Telegram Bot <span class="projects-table__arrow">→</span>
-                        </a>
-                    </td>
-                    <td>
-                        <p class="projects-table__desc">A Telegram bot developed for store management, product lookup, customer interaction and quick access to shop information.</p>
-                        <div class="projects-table__tech">
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge tech-badge--purple">Telegram Bot API</span>
-                            <span class="tech-badge tech-badge--teal">Store Management</span>
-                        </div>
-                    </td>
-                </tr>
-
-                <!-- Project 4: Shoma Shop Website -->
-                <tr data-project>
-                    <td class="projects-table__name">
-                        <span class="projects-table__icon" aria-hidden="true">🛍️</span>
-                        <a href="http://shoma-shop.ir/" target="_blank" rel="noopener">
-                            Shoma Shop Website <span class="projects-table__arrow">→</span>
-                        </a>
-                    </td>
-                    <td>
-                        <p class="projects-table__desc">A modern responsive website designed for a local shop featuring product showcases, contact information and optimized user experience.</p>
-                        <div class="projects-table__tech">
-                            <span class="tech-badge">HTML</span>
-                            <span class="tech-badge tech-badge--purple">CSS</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge tech-badge--teal">Responsive</span>
-                        </div>
-                    </td>
-                </tr>
-
-                <!-- Project 5: Personal Portfolio -->
-                <tr data-project>
-                    <td class="projects-table__name">
-                        <span class="projects-table__icon" aria-hidden="true">🚀</span>
-                        <span class="projects-table__current">Personal Portfolio</span>
-                    </td>
-                    <td>
-                        <p class="projects-table__desc">My personal portfolio and launcher that brings together all of my social links, featured projects and development journey in one place.</p>
-                        <div class="projects-table__tech">
-                            <span class="tech-badge">HTML</span>
-                            <span class="tech-badge tech-badge--purple">CSS</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge tech-badge--teal">Glassmorphism</span>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <div class="portfolio-grid" id="portfolioGrid"></div>
 </section>
 
 <!-- Statistics Section -->
@@ -332,5 +232,6 @@
 </main>
 
 <script type="module" src="assets/js/main.js"></script>
+<script src="assets/js/projects.js"></script>
 </body>
 </html>
