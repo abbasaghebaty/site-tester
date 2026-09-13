@@ -3,7 +3,7 @@
              ======================================== */
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 1rem;
         }
 
@@ -11,7 +11,7 @@
             background: var(--glass-bg);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius);
-            padding: 1.4rem 1rem;
+            padding: 1.1rem 0.8rem;
             text-align: center;
             text-decoration: none;
             color: var(--text);
@@ -24,8 +24,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 0.6rem;
-            will-change: transform, box-shadow;
+            will-change: background, border-color;
             transform-style: preserve-3d;
             perspective: 600px;
         }
@@ -62,15 +63,13 @@
         }
 
         .social-card:hover {
-            transform: translateY(-5px);
             border-color: var(--border-glass-hover);
-            box-shadow: 0 14px 44px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.04);
             background: var(--glass-bg-hover);
         }
 
         .social-card__icon {
-            width: 42px;
-            height: 42px;
+            width: 46px;
+            height: 46px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -80,8 +79,8 @@
         }
 
         .social-card__icon svg {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             transition: transform var(--transition-fast);
         }
 
@@ -91,14 +90,14 @@
 
         .social-card__name {
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1.02rem;
             position: relative;
             z-index: 1;
             letter-spacing: -0.01em;
         }
 
         .social-card__desc {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             position: relative;
             z-index: 1;
