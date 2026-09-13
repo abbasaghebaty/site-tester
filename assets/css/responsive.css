@@ -59,12 +59,15 @@
             .social-card__desc {
                 font-size: 0.7rem;
             }
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+            .projects-table {
+                min-width: 480px;
+            }
+            .projects-table thead th,
+            .projects-table td {
+                padding: 0.8rem 0.9rem;
             }
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
                 gap: 0.7rem;
             }
             .stat-card__number {

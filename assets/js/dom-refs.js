@@ -9,16 +9,15 @@ export function getDomRefs() {
         const currentYearEl = document.getElementById('currentYear');
         const lastUpdatedEl = document.getElementById('lastUpdated');
         const statProjectsEl = document.getElementById('statProjects');
-        const statReposEl = document.getElementById('statRepos');
         const statExperienceEl = document.getElementById('statExperience');
         const statVisitorsEl = document.getElementById('statVisitors');
-        const portfolioGrid = document.getElementById('portfolioGrid');
+        const projectsTableBody = document.getElementById('projectsTableBody');
         const statsSectionEl = document.getElementById('statsSection');
 
 
     return {
         typingTextEl, flipClockEl, bgOrbsEl, currentYearEl, lastUpdatedEl,
-        statProjectsEl, statReposEl, statExperienceEl, statVisitorsEl,
-        portfolioGrid, statsSectionEl,
+        statProjectsEl, statExperienceEl, statVisitorsEl,
+        projectsTableBody, statsSectionEl,
     };
 }

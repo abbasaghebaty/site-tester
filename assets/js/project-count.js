@@ -1,9 +1,9 @@
-// Counts the portfolio project cards rendered in the page.
-export function getTotalProjects(portfolioGrid) {
+// Counts the project rows rendered in the projects table.
+export function getTotalProjects(projectsTableBody) {
         // ========================================
         // Dynamic Project Count
         // ========================================
-        const projectCards = portfolioGrid.querySelectorAll('[data-project]');
-        return projectCards.length;
+        const projectRows = projectsTableBody.querySelectorAll('[data-project]');
+        return projectRows.length;
 
 }

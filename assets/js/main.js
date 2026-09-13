@@ -9,7 +9,6 @@ import { getYearsExperience } from './experience-calc.js';
 import { initTypingAnimation } from './typing-animation.js';
 import { initFlipClock } from './flip-clock.js';
 import { initStats } from './stats.js';
-import { initGithubStats } from './github-api.js';
 import { initVisitorCounter } from './visitor-counter.js';
 import { initTiltEffect } from './tilt-effect.js';
 import { initScrollReveal } from './scroll-reveal.js';
@@ -22,7 +21,7 @@ import { initSmoothScroll } from './smooth-scroll.js';
 
     initFooterDate(dom.currentYearEl, dom.lastUpdatedEl, now);
 
-    const totalProjects = getTotalProjects(dom.portfolioGrid);
+    const totalProjects = getTotalProjects(dom.projectsTableBody);
     const yearsExperience = getYearsExperience(now);
 
     initTypingAnimation(dom.typingTextEl);
@@ -30,7 +29,6 @@ import { initSmoothScroll } from './smooth-scroll.js';
 
     const { statValues, statAnimated, tryAnimateStat } = initStats({
         statProjectsEl: dom.statProjectsEl,
-        statReposEl: dom.statReposEl,
         statExperienceEl: dom.statExperienceEl,
         statVisitorsEl: dom.statVisitorsEl,
         statsSectionEl: dom.statsSectionEl,
@@ -38,7 +36,6 @@ import { initSmoothScroll } from './smooth-scroll.js';
         yearsExperience,
     });
 
-    initGithubStats({ statValues, statAnimated, tryAnimateStat, statReposEl: dom.statReposEl });
     initVisitorCounter({ statValues, tryAnimateStat, statVisitorsEl: dom.statVisitorsEl });
 
     initTiltEffect();
@@ -51,8 +48,8 @@ import { initSmoothScroll } from './smooth-scroll.js';
         // ========================================
         console.log('%c🚀 Abbas Aghebaty Portfolio Ready',
             'color: #3B82F6; font-weight: bold; font-size: 1.1em;');
-        console.log('%c✓ Tehran Flip Clock Active  %c✓ GitHub API Integrated  %c✓ Visitor Counter Live',
-            'color: #7C3AED;', 'color: #3B82F6;', 'color: #14b8a6;');
+        console.log('%c✓ Tehran Flip Clock Active  %c✓ Visitor Counter Live',
+            'color: #7C3AED;', 'color: #14b8a6;');
         console.log('%cAll systems nominal. No errors.', 'color: #94a3b8; font-style: italic;');
 
 })();

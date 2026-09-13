@@ -1,4 +1,4 @@
-// Subtle 3D mouse-tilt effect applied to portfolio & social cards.
+// Subtle 3D mouse-tilt effect applied to social cards.
 export function initTiltEffect() {
         // ========================================
         // Mouse Tilt Effect for Cards (3D subtle tilt)
@@ -57,8 +57,8 @@ export function initTiltEffect() {
             });
         }
 
-        // Apply tilt to all portfolio cards and social cards
-        document.querySelectorAll('.portfolio-card, .social-card').forEach(card => {
+        // Apply tilt to all social cards
+        document.querySelectorAll('.social-card').forEach(card => {
             applyTiltEffect(card);
         });
 

@@ -1,7 +1,7 @@
 // Animated "By the Numbers" stat counters. Exposes statValues/tryAnimateStat
-// so the GitHub API and visitor-counter modules can feed in async data.
+// so the visitor-counter module can feed in async data.
 export function initStats({
-    statProjectsEl, statReposEl, statExperienceEl, statVisitorsEl,
+    statProjectsEl, statExperienceEl, statVisitorsEl,
     statsSectionEl, totalProjects, yearsExperience,
 }) {
         // ========================================
@@ -9,18 +9,16 @@ export function initStats({
         // ========================================
         const statElements = {
             projects: statProjectsEl,
-            repos: statReposEl,
             experience: statExperienceEl,
             visitors: statVisitorsEl,
         };
         const statValues = {
             projects: totalProjects,
-            repos: null,
             experience: yearsExperience,
             visitors: null,
         };
-        const statSuffix = { projects: '', repos: '', experience: '+', visitors: '' };
-        const statAnimated = { projects: false, repos: false, experience: false, visitors: false };
+        const statSuffix = { projects: '', experience: '+', visitors: '' };
+        const statAnimated = { projects: false, experience: false, visitors: false };
         let statsSectionVisible = false;
 
         function easeOutCubic(t) {
