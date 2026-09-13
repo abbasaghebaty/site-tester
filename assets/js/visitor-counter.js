@@ -4,7 +4,8 @@ const D8A_TRACKING_URL = `https://global.t.d8a.tech/${D8A_PROPERTY_ID}/d/c`;
 const COUNTER_NAMESPACE = 'abbas-aghebaty-site-tester';
 const COUNTER_ACTION = 'view';
 const COUNTER_KEY = 'visitors';
-const COUNTER_URL = `https://counterapi.com/api/${COUNTER_NAMESPACE}/${COUNTER_ACTION}/${COUNTER_KEY}?unique=true`;
+const COUNTER_START_NUMBER = 243;
+const COUNTER_URL = `https://counterapi.com/api/${COUNTER_NAMESPACE}/${COUNTER_ACTION}/${COUNTER_KEY}?unique=true&startNumber=${COUNTER_START_NUMBER}`;
 
 export function initVisitorCounter({ statValues, tryAnimateStat }) {
     if (!statValues || typeof tryAnimateStat !== 'function') return;
