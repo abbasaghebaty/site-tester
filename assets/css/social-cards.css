@@ -24,6 +24,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 0.4rem;
             will-change: transform, box-shadow;
             transform-style: preserve-3d;
@@ -69,8 +70,8 @@
         }
 
         .social-card__icon {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -80,8 +81,8 @@
         }
 
         .social-card__icon svg {
-            width: 27px;
-            height: 27px;
+            width: 30px;
+            height: 30px;
             transition: transform var(--transition-fast);
         }
 
@@ -91,14 +92,14 @@
 
         .social-card__name {
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             position: relative;
             z-index: 1;
             letter-spacing: -0.01em;
         }
 
         .social-card__desc {
-            font-size: 0.72rem;
+            font-size: 0.76rem;
             color: var(--text-muted);
             position: relative;
             z-index: 1;
