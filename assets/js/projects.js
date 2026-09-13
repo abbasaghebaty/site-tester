@@ -1,67 +1,61 @@
 async function loadProjects() {
-  const grid = document.getElementById('portfolioGrid');
-  if (!grid) return;
+    const tableBody = document.getElementById('portfolioGrid');
+    if (!tableBody) return;
 
-  try {
-    const res = await fetch('assets/data/projects.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    try {
+        const res = await fetch('assets/data/projects.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    const projects = await res.json();
-    const visible = projects.filter((p) => !p.hidden);
+        const projects = await res.json();
+        const visible = projects.filter((project) => !project.hidden);
 
-    grid.innerHTML = visible.map(renderCard).join('');
+        tableBody.innerHTML = visible.map(renderProjectRow).join('');
 
-    window.dispatchEvent(new CustomEvent('projects:loaded', {
-      detail: { count: visible.length },
-    }));
-  } catch (err) {
-    console.error('Failed to load projects:', err);
-  }
-}
-
-function getInitials(title) {
-  return title
-    .split(' ')
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0].toUpperCase())
-    .join('');
+        window.dispatchEvent(new CustomEvent('projects:loaded', {
+            detail: { count: visible.length },
+        }));
+    } catch (err) {
+        console.error('Failed to load projects:', err);
+    }
 }
 
 function renderTech(tech = []) {
-  return tech
-    .map((t) => {
-      const modifier = t.variant ? ` portfolio-card__tech-badge--${t.variant}` : '';
-      return `<span class="portfolio-card__tech-badge${modifier}">${t.label}</span>`;
-    })
-    .join('');
+    return tech.map((item) => {
+        const modifier = item.variant ? ` tech-badge--${item.variant}` : '';
+        return `<span class="tech-badge${modifier}">${item.label}</span>`;
+    }).join('');
 }
 
-function renderLinks(links = []) {
-  return links
-    .map((link) => {
-      if (link.type === 'current') {
-        return `<span class="portfolio-card__link portfolio-card__link--secondary">${link.label}</span>`;
-      }
-      const modifier = link.type === 'demo' ? ' portfolio-card__link--demo' : '';
-      return `<a href="${link.url}" class="portfolio-card__link${modifier}" target="_blank" rel="noopener">${link.label} <span class="portfolio-card__link-arrow">→</span></a>`;
-    })
-    .join('');
+function renderProjectName(project) {
+    const currentLink = project.links?.find((link) => link.type === 'current');
+    const externalLink = project.links?.find((link) => link.type !== 'current' && link.url);
+    const link = externalLink || currentLink;
+
+    if (!link) {
+        return `<span class="projects-table__current">${project.title}</span>`;
+    }
+
+    if (link.type === 'current') {
+        return `<span class="projects-table__current">${project.title}</span>`;
+    }
+
+    return `<a href="${link.url}" target="_blank" rel="noopener noreferrer">
+        ${project.title} <span class="projects-table__arrow">→</span>
+    </a>`;
 }
 
-function renderCard(project) {
-  return `
-    <article class="portfolio-card" data-project>
-      <div class="portfolio-card__image">
-        <div class="portfolio-card__image-placeholder">${getInitials(project.title)}</div>
-      </div>
-      <div class="portfolio-card__body">
-        <h3 class="portfolio-card__title">${project.title}</h3>
-        <p class="portfolio-card__desc">${project.description}</p>
-        <div class="portfolio-card__tech">${renderTech(project.tech)}</div>
-        <div class="portfolio-card__actions">${renderLinks(project.links)}</div>
-      </div>
-    </article>`;
+function renderProjectRow(project) {
+    return `<tr data-project>
+        <td class="projects-table__name">
+            ${renderProjectName(project)}
+        </td>
+        <td>
+            <p class="projects-table__desc">${project.description}</p>
+            <div class="projects-table__tech">
+                ${renderTech(project.tech)}
+            </div>
+        </td>
+    </tr>`;
 }
 
 document.addEventListener('DOMContentLoaded', loadProjects);
