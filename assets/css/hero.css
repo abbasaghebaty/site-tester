@@ -29,7 +29,6 @@
             position: relative;
             user-select: none;
             letter-spacing: -0.03em;
-            transition: box-shadow var(--transition-smooth);
             flex-shrink: 0;
             overflow: visible;
         }
@@ -39,7 +38,7 @@
         }
 
         .hero__avatar:hover {
-            box-shadow: 0 0 55px var(--blue-glow), 0 0 100px rgba(124, 58, 237, 0.4);
+            box-shadow: 0 0 40px var(--blue-glow), 0 0 80px rgba(124, 58, 237, 0.25);
         }
 
         .hero__avatar-ring {
@@ -50,15 +49,19 @@
             animation: ringPulse 3s ease-in-out infinite;
             pointer-events: none;
             transform: none;
+            opacity: 0.7;
+            box-sizing: border-box;
         }
 
         @keyframes ringPulse {
             0%,
             100% {
-                opacity: 0.6;
+                opacity: 0.7;
+                box-shadow: 0 0 0 rgba(255, 255, 255, 0);
             }
             50% {
-                opacity: 1;
+                opacity: 0.7;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
             }
         }
 
