@@ -38,13 +38,13 @@ function renderTech(tech = []) {
 }
 
 function renderProjectName(project) {
-    const externalLink = project.links?.find((link) => link.type !== 'current' && link.url);
+    const demoLink = project.links?.find((link) => link.type === 'demo' && link.url);
 
-    if (!externalLink) {
+    if (!demoLink) {
         return `<span class="projects-table__current">${project.title}</span>`;
     }
 
-    return `<a href="${externalLink.url}" target="_blank" rel="noopener noreferrer">
+    return `<a href="${demoLink.url}" target="_blank" rel="noopener noreferrer">
         ${project.title} <span class="projects-table__arrow">→</span>
     </a>`;
 }
