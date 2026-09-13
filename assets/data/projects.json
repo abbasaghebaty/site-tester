@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Increase Photo Resolution",
+    "description": "A lightweight web application that enhances image resolution with multiple upscale levels while maintaining a fast and responsive user experience.",
+    "tech": [
+      { "label": "JavaScript" },
+      { "label": "Canvas API", "variant": "purple" },
+      { "label": "Image Processing", "variant": "teal" }
+    ],
+    "links": [
+      { "type": "github", "label": "GitHub", "url": "https://github.com/abbasaghebaty/Increase-photo-resolotion" },
+      { "type": "demo", "label": "Live Demo", "url": "https://abbasaghebaty.github.io/Increase-photo-resolotion/" }
+    ]
+  },
+  {
+    "title": "Caption Generator",
+    "description": "An intelligent caption generation tool for Telegram shop owners with optimized formatting, emojis and category-based templates.",
+    "tech": [
+      { "label": "JavaScript" },
+      { "label": "Telegram API", "variant": "purple" },
+      { "label": "Automation", "variant": "teal" }
+    ],
+    "links": [
+      { "type": "github", "label": "GitHub", "url": "https://github.com/abbasaghebaty/Caption-Generator" },
+      { "type": "demo", "label": "Live Demo", "url": "https://abbasaghebaty.github.io/Caption-Generator/" }
+    ]
+  },
+  {
+    "title": "YourClean Telegram Bot",
+    "description": "A Telegram bot developed for store management, product lookup, customer interaction and quick access to shop information.",
+    "tech": [
+      { "label": "Node.js" },
+      { "label": "Telegram Bot API", "variant": "purple" },
+      { "label": "Store Management", "variant": "teal" }
+    ],
+    "links": [
+      { "type": "github", "label": "GitHub", "url": "https://github.com/abbasaghebaty/Yourclean-bot" },
+      { "type": "demo", "label": "Open Bot", "url": "https://t.me/YourClean_bot" }
+    ]
+  },
+  {
+    "title": "Shoma Shop Website",
+    "description": "A modern responsive website designed for a local shop featuring product showcases, contact information and optimized user experience.",
+    "tech": [
+      { "label": "HTML" },
+      { "label": "CSS", "variant": "purple" },
+      { "label": "JavaScript" },
+      { "label": "Responsive", "variant": "teal" }
+    ],
+    "links": [
+      { "type": "github", "label": "GitHub", "url": "https://github.com/abbasaghebaty/Shoma.shop" },
+      { "type": "demo", "label": "Live Demo", "url": "http://shoma-shop.ir/" }
+    ]
+  },
+  {
+    "title": "Personal Portfolio",
+    "description": "My personal portfolio and launcher that brings together all of my social links, featured projects and development journey in one place.",
+    "tech": [
+      { "label": "HTML" },
+      { "label": "CSS", "variant": "purple" },
+      { "label": "JavaScript" },
+      { "label": "Glassmorphism", "variant": "teal" }
+    ],
+    "links": [
+      { "type": "current", "label": "Current Website" }
+    ]
+  }
+]
