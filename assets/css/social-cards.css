@@ -28,8 +28,8 @@
         .social-card::after {
             content: '';
             position: absolute;
-            inset: 7px;
-            border-radius: calc(var(--radius) - 5px);
+            inset: 0.45rem;
+            border-radius: calc(var(--radius) - 3px);
             background: var(--glass-bg);
             border: 1px solid var(--border-glass);
             backdrop-filter: blur(10px);
@@ -42,8 +42,8 @@
         .social-card::before {
             content: '';
             position: absolute;
-            inset: 7px;
-            border-radius: calc(var(--radius) - 5px);
+            inset: 0.45rem;
+            border-radius: calc(var(--radius) - 3px);
             opacity: 0;
             transition: opacity var(--transition-smooth);
             z-index: 1;
