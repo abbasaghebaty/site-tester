@@ -11,7 +11,6 @@ import { initFlipClock } from './flip-clock.js';
 import { initStats } from './stats.js';
 import { initVisitorCounter } from './visitor-counter.js';
 import { initTiltEffect } from './tilt-effect.js';
-import { initScrollReveal } from './scroll-reveal.js';
 import { initParallax } from './parallax.js';
 import { initSmoothScroll } from './smooth-scroll.js';
 
@@ -53,7 +52,6 @@ import { initSmoothScroll } from './smooth-scroll.js';
     initVisitorCounter({ statValues, tryAnimateStat, statVisitorsEl: dom.statVisitorsEl });
 
     initTiltEffect();
-    initScrollReveal();
     initParallax(dom.bgOrbsEl);
     initSmoothScroll();
 
