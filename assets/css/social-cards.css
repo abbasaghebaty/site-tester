@@ -11,7 +11,7 @@
             background: var(--glass-bg);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius);
-            padding: 1.1rem 0.8rem;
+            padding: 1.1rem 0.8rem 0.8rem;
             text-align: center;
             text-decoration: none;
             color: var(--text);
