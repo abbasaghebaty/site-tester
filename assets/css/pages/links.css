@@ -5,21 +5,25 @@
 }
 
 .link-card {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--sp-4);
-  padding: var(--sp-5);
-  transition: border-color var(--transition), background var(--transition);
+  justify-content: center;
+  gap: 12px;
+  min-height: 132px;
+  padding: 15px;
+  text-align: center;
+  transition: background var(--transition);
 }
 
 .link-card:hover {
-  border-color: var(--accent-border);
   background: var(--panel-hover);
 }
 
 .link-card__icon {
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--r-md);
   background: var(--surface-raised);
   border: 1px solid var(--border-soft);
@@ -31,8 +35,8 @@
 }
 
 .link-card__icon svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   stroke: currentColor;
   fill: none;
   stroke-width: 1.8;
@@ -40,10 +44,11 @@
 
 .link-card__body {
   min-width: 0;
+  max-width: 100%;
 }
 
 .link-card__name {
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--fs-sm);
   color: var(--text-primary);
 }
@@ -58,7 +63,15 @@
 }
 
 .link-card__arrow {
-  margin-inline-start: auto;
+  position: absolute;
+  inset-inline-end: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   color: var(--text-tertiary);
   flex-shrink: 0;
+}
+
+.link-card__arrow svg {
+  width: 14px;
+  height: 14px;
 }
