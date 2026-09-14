@@ -91,7 +91,7 @@
   }
 ]
 
-/*
+-->
 PROJECT ORDERING NOTE — DO NOT REMOVE
 
 The projects in this file are intentionally ordered by category and priority:
@@ -106,4 +106,4 @@ The projects in this file are intentionally ordered by category and priority:
 
 When adding or editing projects, preserve these ordering rules. Do not sort
 this array alphabetically or automatically reorder it by title.
-*/
+-->
