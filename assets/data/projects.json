@@ -1,5 +1,6 @@
 [
   {
+    "__ordering_note": "PROJECT ORDERING RULES — DO NOT REMOVE OR IGNORE. Keep projects ordered exactly by priority: (1) Websites first. (2) Within Websites, Shoma Shop Website must be first and Caption Generator must be last. (3) Telegram bots come after all Websites. (4) Within Telegram bots, Abbas Assistant Bot must be first. (5) Personal Portfolio must ALWAYS remain the very last project. When adding or editing projects, preserve these rules. Do not sort this array alphabetically or automatically reorder it by title.",
     "title": "Shoma Shop Website",
     "description": "A modern responsive website designed for a local shop featuring product showcases, contact information and optimized user experience.",
     "tech": [
@@ -90,20 +91,3 @@
     ]
   }
 ]
-
--->
-PROJECT ORDERING NOTE — DO NOT REMOVE
-
-The projects in this file are intentionally ordered by category and priority:
-1. Websites must always come first.
-2. Within Websites:
-   - Shoma Shop Website must be first.
-   - Caption Generator must be last.
-3. Telegram bots must come after all Websites.
-4. Within Telegram bots:
-   - Abbas Assistant Bot must be first.
-5. Personal Portfolio must ALWAYS remain the very last project in the list.
-
-When adding or editing projects, preserve these ordering rules. Do not sort
-this array alphabetically or automatically reorder it by title.
--->
