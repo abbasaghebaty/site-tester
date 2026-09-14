@@ -1,5 +1,19 @@
 [
   {
+    "title": "Shoma Shop Website",
+    "description": "A modern responsive website designed for a local shop featuring product showcases, contact information and optimized user experience.",
+    "tech": [
+      { "label": "HTML" },
+      { "label": "CSS", "variant": "purple" },
+      { "label": "JavaScript" },
+      { "label": "Responsive", "variant": "teal" }
+    ],
+    "links": [
+      { "type": "github", "label": "GitHub", "url": "https://github.com/abbasaghebaty/Shoma.shop" },
+      { "type": "demo", "label": "Live Demo", "url": "http://shoma-shop.ir/" }
+    ]
+  },
+  {
     "title": "Increase Photo Resolution",
     "description": "A lightweight web application that enhances image resolution with multiple upscale levels while maintaining a fast and responsive user experience.",
     "tech": [
@@ -26,46 +40,6 @@
     ]
   },
   {
-    "title": "YourClean Telegram Bot",
-    "description": "A Telegram bot developed for store management, product lookup, customer interaction and quick access to shop information.",
-    "tech": [
-      { "label": "Node.js" },
-      { "label": "Telegram Bot API", "variant": "purple" },
-      { "label": "Store Management", "variant": "teal" }
-    ],
-    "links": [
-      { "type": "github", "label": "GitHub", "url": "https://github.com/abbasaghebaty/Yourclean-bot" },
-      { "type": "demo", "label": "Open Bot", "url": "https://t.me/YourClean_bot" }
-    ]
-  },
-  {
-    "title": "Shoma Shop Website",
-    "description": "A modern responsive website designed for a local shop featuring product showcases, contact information and optimized user experience.",
-    "tech": [
-      { "label": "HTML" },
-      { "label": "CSS", "variant": "purple" },
-      { "label": "JavaScript" },
-      { "label": "Responsive", "variant": "teal" }
-    ],
-    "links": [
-      { "type": "github", "label": "GitHub", "url": "https://github.com/abbasaghebaty/Shoma.shop" },
-      { "type": "demo", "label": "Live Demo", "url": "http://shoma-shop.ir/" }
-    ]
-  },
-  {
-    "title": "Personal Portfolio",
-    "description": "My personal portfolio and launcher that brings together all of my social links, featured projects and development journey in one place.",
-    "tech": [
-      { "label": "HTML" },
-      { "label": "CSS", "variant": "purple" },
-      { "label": "JavaScript" },
-      { "label": "Glassmorphism", "variant": "teal" }
-    ],
-    "links": [
-      { "type": "current", "label": "Current Website" }
-    ]
-  },
-  {
     "title": "Abbas Assistant Bot",
     "description": "A personal Telegram assistant for introducing me, my projects and contact methods. The bot is built with a modular structure to provide a simple and professional environment for presenting my activities, skills and projects.",
     "tech": [
@@ -88,5 +62,48 @@
     "links": [
       { "type": "demo", "label": "Open Bot", "url": "https://t.me/academy_adminx_Bot" }
     ]
+  },
+  {
+    "title": "YourClean Telegram Bot",
+    "description": "A Telegram bot developed for store management, product lookup, customer interaction and quick access to shop information.",
+    "tech": [
+      { "label": "Node.js" },
+      { "label": "Telegram Bot API", "variant": "purple" },
+      { "label": "Store Management", "variant": "teal" }
+    ],
+    "links": [
+      { "type": "github", "label": "GitHub", "url": "https://github.com/abbasaghebaty/Yourclean-bot" },
+      { "type": "demo", "label": "Open Bot", "url": "https://t.me/YourClean_bot" }
+    ]
+  },
+  {
+    "title": "Personal Portfolio",
+    "description": "My personal portfolio and launcher that brings together all of my social links, featured projects and development journey in one place.",
+    "tech": [
+      { "label": "HTML" },
+      { "label": "CSS", "variant": "purple" },
+      { "label": "JavaScript" },
+      { "label": "Glassmorphism", "variant": "teal" }
+    ],
+    "links": [
+      { "type": "current", "label": "Current Website" }
+    ]
   }
 ]
+
+/*
+PROJECT ORDERING NOTE — DO NOT REMOVE
+
+The projects in this file are intentionally ordered by category and priority:
+1. Websites must always come first.
+2. Within Websites:
+   - Shoma Shop Website must be first.
+   - Caption Generator must be last.
+3. Telegram bots must come after all Websites.
+4. Within Telegram bots:
+   - Abbas Assistant Bot must be first.
+5. Personal Portfolio must ALWAYS remain the very last project in the list.
+
+When adding or editing projects, preserve these ordering rules. Do not sort
+this array alphabetically or automatically reorder it by title.
+*/
