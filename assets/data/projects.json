@@ -64,5 +64,29 @@
     "links": [
       { "type": "current", "label": "Current Website" }
     ]
+  },
+  {
+    "title": "Abbas Assistant Bot",
+    "description": "A personal Telegram assistant for introducing me, my projects and contact methods. The bot is built with a modular structure to provide a simple and professional environment for presenting my activities, skills and projects.",
+    "tech": [
+      { "label": "Node.js" },
+      { "label": "Telegram Bot API", "variant": "purple" },
+      { "label": "Modular Architecture", "variant": "teal" }
+    ],
+    "links": [
+      { "type": "demo", "label": "Open Bot", "url": "https://t.me/abbas_aghebaty_bot" }
+    ]
+  },
+  {
+    "title": "Academy AdminX Bot",
+    "description": "A Telegram sales and management bot for an educational package, including product presentation, order registration, payment and user access management. The bot was designed to manage the purchase and access delivery process.",
+    "tech": [
+      { "label": "Node.js" },
+      { "label": "Telegram Bot API", "variant": "purple" },
+      { "label": "Payment & Access Management", "variant": "teal" }
+    ],
+    "links": [
+      { "type": "demo", "label": "Open Bot", "url": "https://t.me/academy_adminx_Bot" }
+    ]
   }
 ]
